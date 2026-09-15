@@ -18,12 +18,12 @@ jobs:
 
       - name: Update activity log
         run: |
-          echo "Daily activity - $(date -u '+%Y-%m-%d')" >> activity.log
+          echo "Daily activity - $(TZ=Asia/Kolkata date +'%Y-%m-%d')" >> activity.log
 
       - name: Commit changes
         run: |
           git config user.name "Raghavratan2003"
-          git config user.email "rghvrtnydv2003@gmail.com"
+          git config user.email "YOUR_GITHUB_NOREPLY_EMAIL"
           git add activity.log
           git commit -m "Daily activity update"
           git push
