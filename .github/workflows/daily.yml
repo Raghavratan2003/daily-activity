@@ -26,5 +26,11 @@ jobs:
           git config user.email "rghvrtnydv2003@gmail.com"
 
           git add activity.log
+
+          CURRENT_DATE=$(TZ=Asia/Kolkata date '+%Y-%m-%dT%H:%M:%S%z')
+
+          GIT_AUTHOR_DATE="$CURRENT_DATE" \
+          GIT_COMMITTER_DATE="$CURRENT_DATE" \
           git commit -m "Daily activity update"
+
           git push
